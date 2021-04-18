@@ -67,13 +67,11 @@ app.get('/weather', (req, res) => {
                 })
             }
             
-            const forecast = 'In ' + location + ' it is now ' + observation_time + '. The temperature is ' + temperature + ' degrees out. There is a ' + precip + '% chance of rain.'
-            console.log('Forecast:', forecast);
+            const forecast = 'It is now ' + observation_time + '. The temperature is ' + temperature + ' degrees out. There is a ' + precip + '% chance of rain.'
 
             res.send({
                 location,
-                temperature,
-                precip
+                forecast
             });
         })
     })
