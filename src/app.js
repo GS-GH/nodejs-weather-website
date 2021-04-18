@@ -60,14 +60,14 @@ app.get('/weather', (req, res) => {
             })
         }
 
-        forecast (data, (error, { location, temperature, precip } = {}) => {
+        forecast (data, (error, { location, temperature, precip, observation_time } = {}) => {
             if (error) {
                 return res.send({
                     error
                 })
             }
             
-            const forecast = 'In ' + location + ' is currently ' + temperature + ' degrees out. There is a ' + precip + '% chance of rain.'
+            const forecast = 'In ' + location + ' it is now ' + observation_time + '. The temperature is ' + temperature + ' degrees out. There is a ' + precip + '% chance of rain.'
             console.log('Forecast:', forecast);
 
             res.send({
